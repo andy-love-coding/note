@@ -4,21 +4,21 @@
   <title>@yield('title', 'NOTE')- 最好用的笔记</title>
   <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="/css/tree.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
 </head>
 <body>
   <div id="app" class="{{ route_class() }}-page">
     @include('layouts._header')
+    @include('layouts._message')
     @include('layouts._sidebar')
 
-    <div class="main">
-        @include('layouts._message')
+    <div class="main">        
         @yield('content')
     </div>    
   </div>
 
   <script src="/js/app.js"></script>
-  <script src="js/tree.js"></script>
+  <script src="/js/tree.js"></script>
   <script>
     $(document).ready(function(){
       var data = [

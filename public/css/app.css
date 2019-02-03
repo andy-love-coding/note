@@ -8337,7 +8337,7 @@ button.close {
 
 body {
   padding-top: 51px;
-  padding-left: 300px;
+  background: #777;
 }
 
 section {
@@ -8413,6 +8413,12 @@ p {
   background-color: transparent;
 }
 
+.flash-message {
+  position: relative;
+  z-index: 1001;
+  text-align: center;
+}
+
 /* sidebar */
 
 .sidebar {
@@ -8436,6 +8442,17 @@ p {
 /* main */
 
 .main {
-  background: #777;
+  margin-left: 300px;
+}
+
+/* login-page */
+
+.login-page .main {
+  margin-left: 0;
+  background-color: #fff;
+}
+
+.login-page .main .panel {
+  margin-top: 90px;
 }
 

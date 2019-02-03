@@ -7,7 +7,7 @@ $navbar-color: #3c3e42;
 
 body {
   padding-top: 51px;
-  padding-left: 300px;
+  background: #777;
 }
 
 section {
@@ -76,7 +76,11 @@ p {
   }
 }
 
-
+.flash-message {
+  position: relative;
+  z-index: 1001; // z-index 要生效必须配套 position
+  text-align: center;
+}
 
 /* sidebar */
 
@@ -99,6 +103,16 @@ p {
 
 /* main */
 
-.main {
-  background: #777;
+.main {  
+  margin-left: 300px;
+}
+
+/* login-page */
+
+.login-page .main {
+  margin-left: 0;   
+  background-color: #fff;
+  .panel {
+    margin-top: 90px;
+  }
 }
