@@ -1,0 +1,41 @@
+#tree{
+	background: #eeeeee;
+	padding-top: 10px;
+	padding-bottom: 30px; 
+}
+#tree ul{
+	padding-left:20px;
+	width: 100%;
+
+}
+#tree li{
+	width: 100%;
+	list-style-type:none;
+}
+#tree a{
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	width: 100%;
+	height: 25px;
+}
+
+#tree a span {
+	display: inline-block;
+	width: 90%;
+	word-wrap: break-word;
+}
+
+#tree a.now{
+	color: red; 	
+}
+
+#tree a:hover{
+	text-decoration: none;
+	color:green;
+}
+
+#tree ul li i:first-child{
+	margin:0 5px;
+	color: green;
+}
