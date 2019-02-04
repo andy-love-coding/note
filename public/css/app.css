@@ -8447,12 +8447,14 @@ p {
 
 /* login-page */
 
-.login-page .main {
+.login-page .main,
+.signup-page .main {
   margin-left: 0;
   background-color: #fff;
 }
 
-.login-page .main .panel {
+.login-page .main .panel,
+.signup-page .main .panel {
   margin-top: 90px;
 }
 

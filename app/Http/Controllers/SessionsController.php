@@ -22,7 +22,7 @@ class SessionsController extends Controller
         ]);
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
-            session()->flash('success', '登录成功');
+            session()->flash('success', '欢迎回来！');
             return redirect()->intended(route('users.show', [Auth::user()]));
             // intended 方法，该方法可将页面重定向到上一次请求尝试访问的页面上
             // intended 方法，并接收一个【默认跳转地址参数】，当上一次请求记录为空时，跳转到默认地址上。
