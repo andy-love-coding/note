@@ -12,13 +12,14 @@
     @include('layouts._message')
     @include('layouts._sidebar')
 
-    <div class="main">        
+    <div class="main container-fluid">
         @yield('content')
-    </div>    
+    </div>
   </div>
 
   <script src="/js/app.js"></script>
   <script src="/js/tree.js"></script>
+  @include('markdown::decode',['editors'=>['doc-content']])
   <script>
     $(document).ready(function(){
       var data = [
