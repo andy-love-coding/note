@@ -5,7 +5,7 @@ function loadTree(tData){
 		var li = $('<li>').appendTo(ul);		
 		var node = $('<a>').attr({
 		    "href" : tData[i].url,
-		    "target" : "_blank"
+		    // "target" : "_blank"
 		}).appendTo(li);
 		var icon = $('<i>').css('margin-right','5').appendTo(node);
 		

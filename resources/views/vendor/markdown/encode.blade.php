@@ -11,13 +11,17 @@
             height: 640,
             markdown : "",
             path : "{{asset('vendor/markdown/lib')}}/",
+            saveHTMLToTextarea : true,
+            taskList: true, 
+            tocm: true,
             toolbarIcons : function() {
                 return ["undo", "redo", "|", "bold", "del", "italic", "quote", "ucwords", "uppercase", "lowercase", "|", "h1", "h2", "h3", "h4", "h5", "h6", "|", "list-ul", "list-ol", "hr", "|", "link", "reference-link", "image", "code", "preformatted-text", "code-block", "table", "datetime", "emoji", "html-entities", "pagebreak", "||", "goto-line", "watch", "clear", "preview", "fullscreen"]
             },
+            watch : false,
             imageUpload : true,
             imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
             imageUploadURL : "{{url('markdown/upload')}}",
-        });
+        });        
         @endforeach
     });
 

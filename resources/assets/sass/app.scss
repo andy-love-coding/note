@@ -5,10 +5,7 @@ $navbar-color: #3c3e42;
 
 /* universal */
 
-body {
-  padding-top: 51px;
-  // background: #777;
-}
+
 
 section {
   overflow: auto;
@@ -25,16 +22,24 @@ textarea {
 /* markdown editor */
 #doc-content {
   text-align: left;
+  pre {
+    li {
+      list-style-type: none !important;
+      background: #f5f5f5 !important;
+    }
+    ol {
+      padding-left: 5px !important;
+    }
+  }  
 }
-pre {
-  li {
-    list-style-type: none !important;
-    background: #f5f5f5 !important;
-  }
-  ol {
-    padding-left: 5px !important;
-  }
-}
+// #test-editormd {
+  // .CodeMirror {
+  //   width: 100% !important;  
+  // }
+  // .editormd-preview {
+  //   width: 0 !important;
+  // }
+// }
 
 /* typography */
 
@@ -104,6 +109,18 @@ p {
 
 .main {  
   margin-left: 300px;
+  margin-top: 51px;
+  .reference-link { // 解决锚点跳转偏移，被 fexed nav 遮住的问题
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100px;
+      height: 71px;
+      top: -71px;
+    }
+  }
 }
 
 /* login-page */

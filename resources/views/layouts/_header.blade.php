@@ -3,6 +3,13 @@
     <div class="col-md-offset-0 col-md-12">
       <a href="{{ route('home') }}" id="logo">NOTE</a>
       <nav>
+        <ul class="nav navbar-nav navbar-left">
+          <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 1))) }}"><a href="{{ route('categories.show', 1) }}">PHP</a></li>
+          <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 2))) }}"><a href="{{ route('categories.show', 2) }}">Lavavel</a></li>
+          <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 3))) }}"><a href="{{ route('categories.show', 3) }}">JS</a></li>
+        </ul>
+      </nav>
+      <nav>
         <ul class="nav navbar-nav navbar-right">
           @if (Auth::check())
             <li><a href="#">用户列表</a></li>

@@ -8335,10 +8335,6 @@ button.close {
 
 /* universal */
 
-body {
-  padding-top: 51px;
-}
-
 section {
   overflow: auto;
 }
@@ -8357,12 +8353,12 @@ textarea {
   text-align: left;
 }
 
-pre li {
+#doc-content pre li {
   list-style-type: none !important;
   background: #f5f5f5 !important;
 }
 
-pre ol {
+#doc-content pre ol {
   padding-left: 5px !important;
 }
 
@@ -8442,6 +8438,20 @@ p {
 
 .main {
   margin-left: 300px;
+  margin-top: 51px;
+}
+
+.main .reference-link {
+  position: relative;
+}
+
+.main .reference-link::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 71px;
+  top: -71px;
 }
 
 /* login-page */
