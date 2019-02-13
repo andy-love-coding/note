@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="doc-content">
-    <textarea style="display:none;">
+<textarea style="display:none;">
 @foreach($paragraphs as $paragraph)
 {!! $paragraph->content !!}
 @endforeach

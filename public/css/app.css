@@ -8335,6 +8335,10 @@ button.close {
 
 /* universal */
 
+body {
+  padding-top: 51px;
+}
+
 section {
   overflow: auto;
 }
@@ -8347,10 +8351,15 @@ textarea {
   text-align: center;
 }
 
+.alert {
+  padding: 3px 15px;
+}
+
 /* markdown editor */
 
 #doc-content {
   text-align: left;
+  padding-top: 0;
 }
 
 #doc-content pre li {
@@ -8381,15 +8390,44 @@ p {
 
 /* header */
 
-.navbar-inverse {
-  background-color: #3c3e42;
+.navbar-default {
+  background-color: #fff;
+  border-color: #e7e7e7;
+  -webkit-box-shadow: 0px 1px 11px 2px rgba(42, 42, 42, 0.1);
+  box-shadow: 0px 1px 8px 2px rgba(42, 42, 42, 0.1);
+  color: #777;
+}
+
+.navbar-default li {
+  outline: none;
+}
+
+.navbar-default li:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: rgba(0, 0, 0, 0.95);
+}
+
+.navbar-default #dropdownMenu1 {
+  padding: 14px 15px;
+  outline: none;
+}
+
+.navbar-default #dropdownMenu1:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.navbar-default #dropdownMenu1:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: rgba(0, 0, 0, 0.95);
+  border-radius: 0;
 }
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #666;
   text-decoration: none;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -8397,7 +8435,7 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: #666;
 }
 
 #logout {
@@ -8438,7 +8476,7 @@ p {
 
 .main {
   margin-left: 300px;
-  margin-top: 51px;
+  padding-top: 15px;
 }
 
 .main .reference-link {
@@ -8459,7 +8497,6 @@ p {
 .login-page .main,
 .signup-page .main {
   margin-left: 0;
-  background-color: #fff;
 }
 
 .login-page .main .panel,

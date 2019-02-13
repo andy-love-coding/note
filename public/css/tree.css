@@ -1,12 +1,12 @@
 #tree{
-	background: #eeeeee;
+	background: #fff;
 	padding-top: 20px;
-	padding-bottom: 30px; 
+	padding-bottom: 30px;
+	padding-left: 20px; 
 }
 #tree ul{
-	padding-left:20px;
+	padding-left:18px;
 	width: 100%;
-
 }
 #tree li{
 	width: 100%;
@@ -35,7 +35,7 @@
 	color:green;
 }
 
-#tree ul li i:first-child{
-	margin:0 5px;
+#tree .fa-minus-square-o, #tree .fa-plus-square-o {
+	margin:0 -11px;
 	color: green;
 }

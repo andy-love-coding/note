@@ -4,18 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paragraph;
+use App\Models\Category;
 
 class StaticPagesController extends Controller
 {
     public function home()
     {
-        $paragraphs = Paragraph::all();
-        $paragraphs->each(function($item, $key) {
-            $item->content = str_replace('{{', '{ {', $item->content);
-            $item->content = str_replace('}}', '} }', $item->content);
-        });
-        // dd($paragraphs);
-        return view('static_pages.home', compact('paragraphs'));
+        $categories = Category::all();
+        $defaultCategory = $categories->first();
+        $defaultArticle = $defaultCategory->articles->first();
+
+        $paragraphs = $defaultArticle->paragraphs;
+        $paragraphs = paragraphsClear($paragraphs);
+
+        // 得到 树形数组
+        $lists = mdToTree($paragraphs);        
+        $lists = json_encode($lists);
+        
+        return view('static_pages.home', compact('categories', 'paragraphs', 'lists'));
     }
 
     public function editor()

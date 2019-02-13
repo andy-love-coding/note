@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'liujin')
+@section('title', $user->name)
 
 @section('content')
 

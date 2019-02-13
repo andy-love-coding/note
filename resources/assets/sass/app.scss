@@ -1,11 +1,13 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-$navbar-color: #3c3e42;
+$navbar-color: #fff;
 
 /* universal */
 
-
+body {
+  padding-top: 51px;
+}
 
 section {
   overflow: auto;
@@ -19,9 +21,14 @@ textarea {
   text-align: center;
 }
 
+.alert {
+  padding: 3px 15px;
+}
+
 /* markdown editor */
 #doc-content {
   text-align: left;
+  padding-top: 0; 
   pre {
     li {
       list-style-type: none !important;
@@ -55,21 +62,44 @@ p {
 
 /* header */
 
-.navbar-inverse {
+.navbar-default {
   background-color: $navbar-color;
+  border-color: #e7e7e7;
+  -webkit-box-shadow: 0px 1px 11px 2px rgba(42, 42, 42, 0.1);
+  box-shadow: 0px 1px 8px 2px rgba(42, 42, 42, 0.1);
+  color: #777;
+  li {
+    outline: none;
+    &:hover {
+      background: rgba(0, 0, 0, 0.03);
+      color: rgba(0, 0, 0, 0.95);
+    }
+  }
+  #dropdownMenu1 {
+    padding: 14px 15px;
+    outline: none;
+    &:active {
+      box-shadow: none;
+    }
+    &:hover {
+      background: rgba(0, 0, 0, 0.03);
+      color: rgba(0, 0, 0, 0.95);
+      border-radius: 0;
+    }
+  }
 }
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #666;
   text-decoration: none;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: #fff;
+    color: #666;
   }
 }
 
@@ -109,7 +139,7 @@ p {
 
 .main {  
   margin-left: 300px;
-  margin-top: 51px;
+  padding-top: 15px; 
   .reference-link { // 解决锚点跳转偏移，被 fexed nav 遮住的问题
     position: relative;
     &::before{
@@ -126,8 +156,7 @@ p {
 /* login-page */
 
 .login-page .main, .signup-page .main {
-  margin-left: 0;   
-  background-color: #fff;
+  margin-left: 0;
   .panel {
     margin-top: 90px;
   }
