@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
   <title>编辑器- 最好用的笔记</title>
   <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="/css/tree.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
+
 </head>
 <body>
   <div id="app" class="{{ route_class() }}-page">

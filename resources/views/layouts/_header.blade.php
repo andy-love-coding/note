@@ -11,7 +11,6 @@
               <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 1))) }}"><a href="{{ route('articles.show', $category->articles->first()->id) }}">{{ $category->name }}</a></li>
             @else
               <li class="dropdown">
-                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $category->name }}<span class="caret"></span></a> -->
                 <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
                     data-toggle="dropdown" data-hover="dropdown">
                     主题
@@ -39,6 +38,7 @@
               <ul class="dropdown-menu">
                 <li><a href="{{ route('users.show', Auth::user()->id) }}">个人中心</a></li>
                 <li><a href="#">编辑资料</a></li>
+                <li><a href="{{ route('categories.index') }}">分类管理</a></li>
                 <li class="divider"></li>
                 <li>
                   <a id="logout" href="#">

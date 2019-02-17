@@ -25,6 +25,41 @@ textarea {
   padding: 3px 15px;
 }
 
+#create {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  padding-top: 15px;
+}
+
+a.add, a.edit {
+  i {
+    color: #ccc;
+    font-size: 16px;
+    float: right;
+  }
+}
+.del_form, .del_form_article {
+  position: relative;
+  float: right;
+  button {
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  i {
+    color: #ccc;
+    font-size: 14px;
+    position: absolute;
+    top: 2px;
+    right: 5px;   
+  }
+}
+
 /* markdown editor */
 #doc-content {
   text-align: left;
@@ -39,14 +74,6 @@ textarea {
     }
   }  
 }
-// #test-editormd {
-  // .CodeMirror {
-  //   width: 100% !important;  
-  // }
-  // .editormd-preview {
-  //   width: 0 !important;
-  // }
-// }
 
 /* typography */
 
@@ -146,18 +173,23 @@ p {
       content: '';
       position: absolute;
       display: block;
-      width: 100px;
+      width: 1px;
       height: 71px;
       top: -71px;
-    }
-  }
+    }    
+  }  
 }
 
-/* login-page */
-
-.login-page .main, .signup-page .main {
+.nosider {
   margin-left: 0;
   .panel {
     margin-top: 90px;
+  }
+}
+
+/* categories-index-page */
+.categories-index-page {
+  .panel {
+    margin-top: 0px;
   }
 }

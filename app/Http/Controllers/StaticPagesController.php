@@ -12,16 +12,28 @@ class StaticPagesController extends Controller
     {
         $categories = Category::all();
         $defaultCategory = $categories->first();
-        $defaultArticle = $defaultCategory->articles->first();
 
-        $paragraphs = $defaultArticle->paragraphs;
+        $article = $defaultCategory->articles->first();
+        if($article){            
+            $paragraphs = $article->paragraphs;
+        } else {
+            $paragraphs = collect([]); // 空集合
+        }        
         $paragraphs = paragraphsClear($paragraphs);
 
+
         // 得到 树形数组
-        $lists = mdToTree($paragraphs);        
+        $lists = mdToTree($paragraphs);
+        array_unshift ($lists, [
+            "id" => "0",
+            "title" => '' || isset($article) && $article->title,
+            "url" => "#" . '' || isset($article) && $article->title,
+            "level" => 1,
+            "candidate" => true 
+         ]);       
         $lists = json_encode($lists);
         
-        return view('static_pages.home', compact('categories', 'paragraphs', 'lists'));
+        return view('static_pages.home', compact('categories', 'paragraphs', 'article', 'lists'));
     }
 
     public function editor()

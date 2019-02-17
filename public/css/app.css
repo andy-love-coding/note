@@ -8355,6 +8355,48 @@ textarea {
   padding: 3px 15px;
 }
 
+#create {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  padding-top: 15px;
+}
+
+a.add i,
+a.edit i {
+  color: #ccc;
+  font-size: 16px;
+  float: right;
+}
+
+.del_form,
+.del_form_article {
+  position: relative;
+  float: right;
+}
+
+.del_form button,
+.del_form_article button {
+  border: none;
+}
+
+.del_form button:focus,
+.del_form_article button:focus {
+  outline: none;
+}
+
+.del_form i,
+.del_form_article i {
+  color: #ccc;
+  font-size: 14px;
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+
 /* markdown editor */
 
 #doc-content {
@@ -8487,20 +8529,22 @@ p {
   content: '';
   position: absolute;
   display: block;
-  width: 100px;
+  width: 1px;
   height: 71px;
   top: -71px;
 }
 
-/* login-page */
-
-.login-page .main,
-.signup-page .main {
+.nosider {
   margin-left: 0;
 }
 
-.login-page .main .panel,
-.signup-page .main .panel {
+.nosider .panel {
   margin-top: 90px;
+}
+
+/* categories-index-page */
+
+.categories-index-page .panel {
+  margin-top: 0px;
 }
 

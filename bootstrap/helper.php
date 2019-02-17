@@ -12,7 +12,9 @@ function paragraphsClear($paragraphs) {
     $paragraphs->each(function($item, $key) {
         $item->content = str_replace('{{', '{ {', $item->content);
         $item->content = str_replace('}}', '} }', $item->content);
+        // $item->content = preg_replace('/(#+ )([A-Za-z0-9\x{4e00}-\x{9fa5} "",:;“”，：；]+)(\\r\\n)/u', '${1}${2}$3', $item->content);
     });
+    // dd($paragraphs);
     return $paragraphs;
 }
 
@@ -24,7 +26,7 @@ function mdToTree($mdParagraphs) {
     return $listTree;
 }
 
-// 得到基础数组
+// 得到标题的基础数组
 function getBaseArr($mdParagraphs) {
     $arr = [];
     $basearr = [];
@@ -34,7 +36,9 @@ function getBaseArr($mdParagraphs) {
         foreach($arr as $key=>$value) {
             if (substr($value,0,1) === '#') {                  
                 $headarr = explode(" ", $value, 2);
-                $basearr[] = ['id'=>$i, 'title'=>$headarr[1], 'url'=>'#'.$headarr[1], 'level'=>strlen($headarr[0]), 'pid'=>0, 'candidate' => true];
+                if (isset($headarr[1])) {
+                    $basearr[] = ['id'=>$i, 'title'=>$headarr[1], 'url'=>'#'.$headarr[1], 'level'=>strlen($headarr[0]), 'pid'=>0, 'candidate' => true];
+                }
                 $i += 1;
             }
         }
@@ -79,8 +83,12 @@ function getTree($list, $pid = 0)
 
 // 为节点找 pid 
 function findFather($id,$arr) {
-    $son = $arr[$id-1];
-    $subarr = array_reverse(array_slice($arr,0,$id-1));
+    if (isset($arr[$id-1])) {
+        $son = $arr[$id-1]; // 从数组的第二个开始，依次作为儿子，向上找父亲
+    } else {
+        return 0;
+    }    
+    $subarr = array_reverse(array_slice($arr,0,$id-1)); // 向上的子数组
     
     foreach ($subarr as $k=>$father) {
         if ($son['level'] > $father['level']) { // 找到父亲了

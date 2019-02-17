@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\Category;
 
 class SessionsController extends Controller
 {
     // 显示登录页面
     public function create ()
     {
-        return view('sessions.create');
+        $categories = Category::all();
+        return view('sessions.create', compact('categories'));
     }
 
     // 提交登录后的操作

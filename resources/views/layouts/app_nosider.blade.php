@@ -9,7 +9,7 @@
     @include('layouts._header')
     @include('layouts._message')
 
-    <div class="main">        
+    <div class="main nosider">        
         @yield('content')
     </div>    
   </div>

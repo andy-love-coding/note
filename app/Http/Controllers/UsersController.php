@@ -5,17 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use App\Models\Category;
 
 class UsersController extends Controller
 {
     public function show (User $user)
     {
-        return view('users.show', compact('user'));
+        $categories = Category::all();
+        return view('users.show', compact('user', 'categories'));
     }
 
     public function create ()
     {
-        return view('users.create');
+        $categories = Category::all();
+        return view('users.create', compact('categories'));
     }
 
     public function store (Request $request)

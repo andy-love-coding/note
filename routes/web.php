@@ -23,10 +23,14 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
 // 分类
-Route::get('categories/{category}', 'CategoriesController@show')->name('categories.show');
+Route::resource('categories', 'CategoriesController');
 
 // 文章
 Route::resource('articles', 'ArticlesController');
 
 // 段落
-Route::resource('paragraphs', 'ParagraphsController');
+Route::get('articles/{article}/paragraphs/create', 'ParagraphsController@create_edit')->name('article.paragraphs.create');
+Route::get('articles/{article}/paragraphs/{paragraph}/edit', 'ParagraphsController@create_edit')->name('article.paragraphs.edit');
+Route::post('articles/{article}/paragraphs', 'ParagraphsController@store')->name('article.paragraphs.store');
+Route::patch('articles/{article}/paragraphs/{paragraph}', 'ParagraphsController@update')->name('article.paragraphs.update');
+Route::delete('articles/{article}/paragraphs/{paragraph}', 'ParagraphsController@destroy')->name('article.paragraphs.destroy');

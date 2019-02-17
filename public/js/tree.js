@@ -7,7 +7,8 @@ function loadTree(tData){
 		    "href" : tData[i].url,
 		    // "target" : "_blank"
 		}).appendTo(li);
-		var icon = $('<i>').css('margin-right','5').appendTo(node);
+		// var icon = $('<i>').css('margin-right','5').appendTo(node);
+		var icon = $('<i>').appendTo(node);
 		
 		var aTree = $('<span>').html(tData[i].title).appendTo(node);
 		var input = $('<input>').addClass('field').val(tData[i].field).css({'display':'none'}).appendTo(node);

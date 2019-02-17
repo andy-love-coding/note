@@ -8,7 +8,7 @@
         @foreach($editors as $editor)
         editormd("{{$editor}}", {
             width: "95%",
-            height: 640,
+            height: 580,
             markdown : "",
             path : "{{asset('vendor/markdown/lib')}}/",
             saveHTMLToTextarea : true,
