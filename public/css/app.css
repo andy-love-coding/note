@@ -8449,9 +8449,14 @@ p {
   color: rgba(0, 0, 0, 0.95);
 }
 
+.navbar-default .active {
+  background: #ddd;
+}
+
 .navbar-default #dropdownMenu1 {
   padding: 14px 15px;
   outline: none;
+  background-color: transparent;
 }
 
 .navbar-default #dropdownMenu1:active {

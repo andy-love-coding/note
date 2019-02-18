@@ -9,7 +9,7 @@ use App\Models\Article;
 
 class ArticlesController extends Controller
 {
-    public function show(Article $article)
+    public function show(Category $category, Article $article)
     {
         $categories = Category::all();        
 

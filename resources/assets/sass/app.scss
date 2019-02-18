@@ -100,11 +100,15 @@ p {
     &:hover {
       background: rgba(0, 0, 0, 0.03);
       color: rgba(0, 0, 0, 0.95);
-    }
+    }    
+  }
+  .active {
+    background: #ddd;
   }
   #dropdownMenu1 {
     padding: 14px 15px;
     outline: none;
+    background-color: transparent; 
     &:active {
       box-shadow: none;
     }

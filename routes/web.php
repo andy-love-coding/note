@@ -27,6 +27,7 @@ Route::resource('categories', 'CategoriesController');
 
 // 文章
 Route::resource('articles', 'ArticlesController');
+Route::get('categories/{category}/articles/{article}', 'ArticlesController@show')->name('category.articles.show');
 
 // 段落
 Route::get('articles/{article}/paragraphs/create', 'ParagraphsController@create_edit')->name('article.paragraphs.create');

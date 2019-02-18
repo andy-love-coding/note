@@ -4,21 +4,21 @@
       <a href="{{ route('home') }}" id="logo">NOTE</a>
       <nav>
         <ul class="nav navbar-nav navbar-left">
-          @foreach($categories as $category)
+          @foreach($categories as $index => $category)
             @if ($category->articles->count() === 0)              
               <li class="disabled"><a href="#">{{ $category->name }}</a></li>
             @elseif ($category->articles->count() === 1)
-              <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 1))) }}"><a href="{{ route('articles.show', $category->articles->first()->id) }}">{{ $category->name }}</a></li>
+              <li class="{{ active_class((if_route('category.articles.show') && if_route_param('category', $index+1))) }}"><a href="{{ route('category.articles.show', [$category->id, $category->articles->first()->id]) }}">{{ $category->name }}</a></li>
             @else
-              <li class="dropdown">
+              <li class="dropdown {{ active_class((if_route('category.articles.show') && if_route_param('category', $index+1))) }}">
                 <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
                     data-toggle="dropdown" data-hover="dropdown">
-                    主题
+                    {{ $category->name }}
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                   @foreach($category->articles as $article)
-                    <li><a href="{{ route('articles.show', $article->id) }}">{{ $article->title }}</a></li>
+                    <li><a href="{{ route('category.articles.show', [$category->id, $article->id]) }}">{{ $article->title }}</a></li>
                   @endforeach
                 </ul>
               </li>              
