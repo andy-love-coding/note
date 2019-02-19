@@ -9,6 +9,13 @@ use App\Models\Article;
 
 class ArticlesController extends Controller
 {
+    public function index()
+    {
+        $categories = Category::all();
+        $articles = Article::all();
+        return view('articles.index', compact('categories', 'articles'));
+    }
+
     public function show(Category $category, Article $article)
     {
         $categories = Category::all();        
@@ -50,5 +57,17 @@ class ArticlesController extends Controller
     {
         $article->delete();
         return redirect()->route('home')->with('success', '删除成功');
+    }
+
+    public function edit(Article $article)
+    {
+        $categories = Category::all();
+        return view('articles.edit', compact('categories', 'article'));
+    }
+
+    public function update(Article $article, Request $request)
+    {
+        $article->update($request->all());
+        return redirect()->route('articles.index')->with('success', '更新成功！');
     }
 }

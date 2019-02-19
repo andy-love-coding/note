@@ -33,7 +33,7 @@
       nodeClick($('#tree'));
 
       // 定义公共变量
-      var _URL_ = "{{ env('APP_URL') }}";      
+      var _URL_ = "{{ env('APP_URL') }}";
       
       // 给文章添加“添加段落”的按钮,”删除文章“按钮
       var aa = $('<a>').addClass('add').attr({
@@ -42,7 +42,8 @@
       var ii = $('<i>').addClass('glyphicon glyphicon-pencil').appendTo(aa);
       var form_article = $('<form>').addClass('del_form_article').attr({
         'method': 'post',
-        'action': _URL_ + "/articles/"+ "{{ isset($article) ? $article->id : '' }}"
+        'action': _URL_ + "/articles/"+ "{{ isset($article) ? $article->id : '' }}",
+        'onsubmit': 'javascript:return confirm("您确认要删除吗？");'
       });
 
       var input_token1 = $('<input>').attr({
@@ -71,7 +72,8 @@
       var a = $('<a>').addClass('edit');
       var i = $('<i>').addClass('glyphicon glyphicon-edit').appendTo(a);  
       var form = $('<form>').addClass('del_form').attr({
-        'method': 'post'
+        'method': 'post',
+        'onsubmit': 'javascript:return confirm("您确认要删除吗？");'
       });
       var input_token = $('<input>').attr({
         'type': 'hidden',

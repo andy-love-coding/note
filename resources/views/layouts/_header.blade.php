@@ -8,9 +8,9 @@
             @if ($category->articles->count() === 0)              
               <li class="disabled"><a href="#">{{ $category->name }}</a></li>
             @elseif ($category->articles->count() === 1)
-              <li class="{{ active_class((if_route('category.articles.show') && if_route_param('category', $index+1))) }}"><a href="{{ route('category.articles.show', [$category->id, $category->articles->first()->id]) }}">{{ $category->name }}</a></li>
+              <li class="{{ active_class((if_route('category.articles.show') && if_route_param('category', $category->id))) }}"><a href="{{ route('category.articles.show', [$category->id, $category->articles->first()->id]) }}">{{ $category->name }}</a></li>
             @else
-              <li class="dropdown {{ active_class((if_route('category.articles.show') && if_route_param('category', $index+1))) }}">
+              <li class="dropdown {{ active_class((if_route('category.articles.show') && if_route_param('category', $category->id))) }}">
                 <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
                     data-toggle="dropdown" data-hover="dropdown">
                     {{ $category->name }}

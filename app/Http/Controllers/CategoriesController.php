@@ -39,4 +39,10 @@ class CategoriesController extends Controller
         $category->update($request->all());
         return redirect()->route('categories.index')->with('success', '更新成功！');
     }
+
+    public function destroy(Category $category)
+    {
+        $category->delete();
+        return redirect()->route('categories.index')->with('success', '删除成功！');
+    }
 }
