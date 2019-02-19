@@ -39,7 +39,7 @@ class ParagraphsController extends Controller
 
     public function store(Request $request)
     {
-        $data = [];     
+        $data = [];    
         $data['content'] = $this->checkContent($request['test-editormd']);   
         $data['article_id'] = $request->article_id;
         $data['order'] = 100;
@@ -63,6 +63,9 @@ class ParagraphsController extends Controller
     }
 
     private function checkContent($contentMd) {
+        $contentMd = str_replace('{{', '{ {', $contentMd);
+        $contentMd = str_replace('}}', '} }', $contentMd);
+
         $headArr = explode("\r\n", $contentMd);
         $targetArr = ['# ', '## ', '### ', '#### ', '##### ', '######'];
         $hasBlank = false; // 默认没有空格

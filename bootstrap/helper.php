@@ -14,7 +14,6 @@ function paragraphsClear($paragraphs) {
         $item->content = str_replace('}}', '} }', $item->content);
         // $item->content = preg_replace('/(#+ )([A-Za-z0-9\x{4e00}-\x{9fa5} "",:;“”，：；]+)(\\r\\n)/u', '${1}${2}$3', $item->content);
     });
-    // dd($paragraphs);
     return $paragraphs;
 }
 

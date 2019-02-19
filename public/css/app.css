@@ -8402,6 +8402,7 @@ a.edit i {
 #doc-content {
   text-align: left;
   padding-top: 0;
+  margin-bottom: 30px;
 }
 
 #doc-content pre li {
