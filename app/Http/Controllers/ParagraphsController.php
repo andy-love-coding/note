@@ -44,7 +44,7 @@ class ParagraphsController extends Controller
         $data['article_id'] = $request->article_id;
         $data['order'] = 100;
         $paragraph = Paragraph::create($data);
-        return redirect()->route('articles.show', $request->article_id)->with('success', '创建话题成功');    
+        return redirect()->route('articles.show', $request->article_id)->with('success', '创建段落成功');    
     }
 
     public function update(Request $request, Article $article, Paragraph $paragraph)
