@@ -24,13 +24,15 @@ class StaticPagesController extends Controller
 
         // 得到 树形数组
         $lists = mdToTree($paragraphs);
-        array_unshift ($lists, [
-            "id" => "0",
-            "title" => '' || isset($article) && $article->title,
-            "url" => "#" . '' || isset($article) && $article->title,
-            "level" => 1,
-            "candidate" => true 
-         ]);       
+        if (isset($article->title)) {
+            array_unshift ($lists, [
+                "id" => "0",
+                "title" => $article->title,
+                "url" => "#" . $article->title,
+                "level" => 1,
+                "candidate" => true 
+             ]);
+        }          
         $lists = json_encode($lists);
         
         return view('static_pages.home', compact('categories', 'paragraphs', 'article', 'lists'));
